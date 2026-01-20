@@ -1,0 +1,18 @@
+Starting a New Assignment:
+
+1. Open VSCode
+2. Open your PythonProjects folder
+3. Create a new file: assignment1.py
+4. Write your code
+5. Save frequently (Ctrl+S)
+6. Run/test your code (F5 or Ctrl+F5)
+
+
+
+Submitting Work to GitHub:
+1. Save all files (Ctrl+S)
+2. Open terminal in VSCode (Press Ctrl+ followed by backtick)
+3. Type these commands:
+git add .
+git commit -m "Completed Assignment 1"
+git push
