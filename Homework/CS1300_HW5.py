@@ -1,5 +1,4 @@
 # Problem 1: Temperture Converter
-
 temp = float(input("Enter Temperture: "))
 scale = input("Enter Scale: ").strip().lower()
 
@@ -11,9 +10,9 @@ elif scale == "f":
     print(f"{temp:.1f}°F = {converted:.1f}°C")
 else:
     print("Invalid scale.")
-    
-# Problem 4: Course Eligibility Checker
 
+
+# Problem 4: Course Eligibility Checker
 gpa = float(input("Enter GPA (0.0-4.0): "))
 credits = int(input("Enter credit hours completed: "))
 prereq = input("Prerequisite completed? (yes/no): ").strip().lower()
