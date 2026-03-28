@@ -52,7 +52,6 @@ while True:
 
     # Calculate prices that combines how many pizzas and toppings prices. - TESTING
     price = size_prices[size_choice - 1] + len(selected_toppings) * topping_price
-    
     print(price)
     
     # Asks if they want another pizza - NEEDS TO KEEP THE PREVIOUS PIZZA AND SO ON
