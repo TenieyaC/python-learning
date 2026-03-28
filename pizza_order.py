@@ -52,25 +52,12 @@ while True:
 
     # Calculate prices that combines how many pizzas and toppings prices. - TESTING
     price = size_prices[size_choice - 1] + len(selected_toppings) * topping_price
+    
     print(price)
     
     # Asks if they want another pizza - NEEDS TO KEEP THE PREVIOUS PIZZA AND SO ON
     order_another = input("Order another pizza? (y/n): ")
     if order_another.lower() != "y":
+        order_descriptions = [{size_choice}, f"{selected_toppings}"]
+        print(order_descriptions)
         break
-
-
-    # ===== POST-ORDER =====
-    if not order_descriptions:
-        print("\nNo pizzas ordered. See you next time!")
-    else:
-
-    # --- Discount code (Ex 8) ---
-    # ... your code ...
-    # --- Receipt (Ex 6, updated with discount) ---
-    # ... your code ...
-    # --- Most expensive (Ex 7) ---
-    # ... your code ...
-    # --- Size breakdown (Ex 9) ---
-    # ... your code ...
-        print("\n Thank you for your order!")
