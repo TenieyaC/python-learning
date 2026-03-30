@@ -91,3 +91,10 @@ print("="*35)
 
 # Do case-insensitive for the "y", "yes", "n", "no" with ordering another pizza
 # Make it regular cheese if there isn't no toppings
+
+# TO DO FOR FINISHING 
+
+# Make Receipt Line up and neater
+# Do Discount
+# Find Expensive Pizza
+# Count Pizzas By Size
