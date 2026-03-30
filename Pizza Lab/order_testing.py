@@ -48,6 +48,7 @@ while True:
             topping = topping_names[int(user_input) - 1]
             if topping not in selected_toppings:
                 selected_toppings.append(topping)
+                print(f"Added {topping}.")
             else:
                 print("Already added!")
         else:
