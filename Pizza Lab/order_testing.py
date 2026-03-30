@@ -46,11 +46,12 @@ while True:
     while user_input.lower() != "done":
         if user_input.isdigit() and 1 <= int(user_input) <= 8:
             topping = topping_names[int(user_input) - 1]
+            # Adds the toppings to the selected toppings
             if topping not in selected_toppings:
                 selected_toppings.append(topping)
                 print(f"Added {topping}.")
             else:
-                print("Already added!")
+                print("Already added!") # Makes sure there isn't any dupilcates
         else:
             print("Not a Topping")
         user_input = input("Enter topping number. Type done to finish: ")
