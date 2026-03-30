@@ -51,29 +51,24 @@ while True:
                 print("Already added!")
         else:
             print("Not a Topping")
+            
         user_input = input("Enter topping number. Type done to finish: ")
 
     # Calculate and store price/pizza
     price = size_prices[size_choice - 1] + len(selected_toppings) * topping_price
     order_descriptions.append(f"{sizes[size_choice - 1]} - {', '.join(selected_toppings)}")
     order_prices.append(price)
-    break
     
 
     # Ask user if they want another pizza
-
-pizza = True
-while pizza:
-    order_another = input("Order another pizza? (y/n): ").lower()
-    if order_another in ["y", "yes"]:
-        pizza = False
-        break
-    elif order_another in ["n", "no"]:
-        pizza = False
-        break
-    else:
-        print("Invalid")
-
+    pizza = True
+    while pizza:
+        order_another = input("Order another pizza? (y/n): ").lower()
+        if order_another == "y":
+            pizza = True
+            break
+        if order_another == "n":
+            pizza = False
 
 # Calculate receipt totals
 subtotal = sum(order_prices)
@@ -89,21 +84,18 @@ else:
         discount_question = input("Do you have a discount?: ").lower()
         if discount_question == "none":
             break
-        if discount_question in ["y", "yes"]:
+        if discount_question == "y":
             discount_input = input("What is it? ")
             if discount_input == "STUDENT10":
-                discount_rate = 0.90
+                discount_rate = 0.10
                 print("Discount = 10% Off")
                 break
-            elif discount_input == "HALFOFF":
+            if discount_input == "HALFOFF":
                 discount_rate = 0.50
                 print("Discount = 50% Off")
                 break
-            else:
-                print("Invalid discount code.")
-        else:
-            print("Invalid response.")
         attempts += 1
+        print(attempts)
         if attempts == 3:
             print("No discount applied.")
 
