@@ -14,7 +14,7 @@ order_descriptions = []  # e.g., "Large Pepperoni, Mushrooms"
 order_prices = []        # e.g., 15.99
 
 
-# ? Main Ordering System
+# Main Ordering System
 while True:
     print("="*30)
     print("\tPIZZA SIZES")
