@@ -71,16 +71,21 @@ while True:
     if order_another.lower() != "y":
         break
 
-# TESTING SUMMARY
-print("\nTESTING ORDER SUMMARY:")
-for i in range(len(order_descriptions)):
-    print(f"{order_descriptions[i]} - ${order_prices[i]:.2f}")
-
 subtotal = sum(order_prices)
 tax = sum(order_prices) * 0.07
-print(f"Subtotal: ${subtotal}")
-print(f"Tax (7%): ${tax:.2f}")
-print(f"Total: ${sum(order_prices) + tax:.2f}")
+
+
+print("="*35)
+print("\tYOUR ORDER RECEIPT")
+print("="*35)
+for i in range(len(order_descriptions)):
+    print(f"{i+1}. {order_descriptions[i]} \n          {order_prices[i]}")
+print("="*35)
+print(f"Subtotal:                     ${subtotal}")
+print(f"Tax (7%):                     ${tax:.2f}")
+print(f"Total:                        ${sum(order_prices) + tax:.2f}")
+print("="*35)
+
 
 # TO DO FOR ORDERING 
 
