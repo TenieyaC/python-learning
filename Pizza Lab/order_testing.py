@@ -84,5 +84,5 @@ print(f"Total: ${sum(order_prices) + tax:.2f}")
 
 # TO DO FOR ORDERING 
 
-# Do case sensitive for the "y", "yes", "n", "no" with ordering another pizza
+# Do case-insensitive for the "y", "yes", "n", "no" with ordering another pizza
 # Make it regular cheese if there isn't no toppings
