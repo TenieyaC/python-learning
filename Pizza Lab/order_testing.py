@@ -75,3 +75,14 @@ while True:
 print("\nTESTING ORDER SUMMARY:")
 for i in range(len(order_descriptions)):
     print(f"{order_descriptions[i]} - ${order_prices[i]:.2f}")
+
+subtotal = sum(order_prices)
+tax = sum(order_prices) * 0.07
+print(f"Subtotal: ${subtotal}")
+print(f"Tax (7%): ${tax:.2f}")
+print(f"Total: ${sum(order_prices) + tax:.2f}")
+
+# TO DO FOR ORDERING 
+
+# Do case sensitive for the "y", "yes", "n", "no" with ordering another pizza
+# Make it regular cheese if there isn't no toppings
