@@ -11,9 +11,9 @@ topping_price = 1.50
 order_descriptions = []
 order_prices = []
 
-
 # Pizza Size Menu
-while True:
+pizza = True
+while pizza:
     print("=" * 30)
     print("\tPIZZA SIZES")
     print("=" * 30)
@@ -53,27 +53,25 @@ while True:
             print("Not a Topping")
         user_input = input("Enter topping number. Type done to finish: ")
 
+    # If no toppings selected, add cheese
+    if not selected_toppings:
+        selected_toppings.append("Cheese")
+
     # Calculate and store price/pizza
     price = size_prices[size_choice - 1] + len(selected_toppings) * topping_price
     order_descriptions.append(f"{sizes[size_choice - 1]} - {', '.join(selected_toppings)}")
     order_prices.append(price)
-    break
-    
 
     # Ask user if they want another pizza
-
-pizza = True
-while pizza:
-    order_another = input("Order another pizza? (y/n): ").lower()
-    if order_another in ["y", "yes"]:
-        pizza = False
-        break
-    elif order_another in ["n", "no"]:
-        pizza = False
-        break
-    else:
-        print("Invalid")
-
+    while True:
+        order_another = input("Order another pizza? (y/n): ").lower()
+        if order_another in ["y", "yes"]:
+            break  # loop again and build another pizza
+        elif order_another in ["n", "no"]:
+            pizza = False
+            break
+        else:
+            print("Invalid, Please Try Again")
 
 # Calculate receipt totals
 subtotal = sum(order_prices)
@@ -101,9 +99,10 @@ else:
                 break
             else:
                 print("Invalid discount code.")
+                attempts += 1
         else:
             print("Invalid response.")
-        attempts += 1
+            attempts += 1
         if attempts == 3:
             print("No discount applied.")
 
