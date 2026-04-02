@@ -14,18 +14,20 @@ order_prices = []
 # Pizza Size Menu
 pizza = True
 while pizza:
-    print("=" * 30)
-    print("\tPIZZA SIZES")
-    print("=" * 30)
-    
-    for i in range(len(sizes)):
-        print(f"{i + 1}. {sizes[i]}\t${size_prices[i]:>5}")
+    print("=" * 30) 
+    print("\tPIZZA SIZES") 
+    print("=" * 30) 
+    for i in range(len(sizes)): 
+        print(f"{i + 1}. {sizes[i]:<15}\t${size_prices[i]:>5}") 
     print("=" * 30)
     
     # Asking for the Pizza Size
     try:
         size_choice = int(input("Pick a size (1-4): "))
-        if size_choice < 1 or size_choice > 4:
+        if size_choice == 0:
+            pizza = False
+            break
+        elif size_choice < 1 or size_choice > 4:
             print("Choose 1-4.")
             continue
     except ValueError:
@@ -46,9 +48,9 @@ while pizza:
             topping = topping_names[int(user_input) - 1]
             if topping not in selected_toppings:
                 selected_toppings.append(topping)
-                print(f"Added {topping}.")
+                print(f"✓ Added {topping}")
             else:
-                print("Already added!")
+                print(f"Already Added {topping}!")
         else:
             print("Not a Topping")
         user_input = input("Enter topping number. Type done to finish: ")
@@ -59,7 +61,7 @@ while pizza:
 
     # Calculate and store price/pizza
     price = size_prices[size_choice - 1] + len(selected_toppings) * topping_price
-    order_descriptions.append(f"{sizes[size_choice - 1]} - {', '.join(selected_toppings)}")
+    order_descriptions.append(f"{sizes[size_choice - 1]} {', '.join(selected_toppings)}")
     order_prices.append(price)
 
     # Ask user if they want another pizza
@@ -90,7 +92,7 @@ else:
         if discount_question in ["y", "yes"]:
             discount_input = input("What is it? ")
             if discount_input == "STUDENT10":
-                discount_rate = 0.90
+                discount_rate = 0.10
                 print("Discount = 10% Off")
                 break
             elif discount_input == "HALFOFF":
@@ -98,11 +100,11 @@ else:
                 print("Discount = 50% Off")
                 break
             else:
-                print("Invalid discount code.")
+                print(f"Invalid discount code. {attempts + 1} Attempts Tried.")
                 attempts += 1
+                continue
         else:
             print("Invalid response.")
-            attempts += 1
         if attempts == 3:
             print("No discount applied.")
 
@@ -114,9 +116,9 @@ else:
         print(f"{i + 1}. {order_descriptions[i]}")
         print(f"   ${order_prices[i]:.2f}")
     print("=" * 35)
-    print(f"Subtotal:                ${subtotal * discount_rate:>7.2f}")
-    print(f"Tax (7%):                ${tax:>7.2f}")
-    print(f"Total:                   ${subtotal * discount_rate + tax:>7.2f}")
+    print(f"Subtotal:                ${subtotal * discount_rate:>6.2f}")
+    print(f"Tax (7%):                ${tax:>6.2f}")
+    print(f"Total:                   ${subtotal * discount_rate + tax:>6.2f}")
     print("=" * 35)
 
     most_expensive = max(order_prices)
