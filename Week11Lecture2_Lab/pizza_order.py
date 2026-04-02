@@ -92,7 +92,7 @@ else:
         if discount_question in ["y", "yes"]:
             discount_input = input("What is it? ")
             if discount_input == "STUDENT10":
-                discount_rate = 0.10
+                discount_rate = 0.90
                 print("Discount = 10% Off")
                 break
             elif discount_input == "HALFOFF":
@@ -120,9 +120,27 @@ else:
     print(f"Tax (7%):                ${tax:>6.2f}")
     print(f"Total:                   ${subtotal * discount_rate + tax:>6.2f}")
     print("=" * 35)
+    print("\nThank you for your order!")
 
     most_expensive = max(order_prices)
     print(f"Most Expensive Pizza: ${most_expensive:.2f}")
 
     least_expensive = min(order_prices)
     print(f"Least Expensive Pizza: ${least_expensive:.2f}")
+
+personal_count=0
+medium_count=0
+large_count=0
+party_count=0
+
+for i in range(len(order_descriptions)):
+    if order_descriptions[i][0:5]=="Large":
+        large_count +=1
+    if order_descriptions[i][0:5]=="Perso":
+        personal_count+=1
+    if order_descriptions[i][0:5]=="Mediu":
+        medium_count+=1
+    if order_descriptions[i][0:5]=="Party":
+        party_count+=1
+
+print(f"personal count {personal_count}, medium count {medium_count}, large count {large_count}, party count {party_count}")  
