@@ -1,0 +1,57 @@
+Unit 1: Objects, Variables, and Python Style
+
+Object: Region of computer memory that contains:
+1. A value (the actual data)  - Example: print(42) # Output: 42
+Value Example: print(42) which outputs 42
+2. A type (what kind of data it is)
+Type Example: print(type(42) which outputs <class 'int'>
+3. An identity (a unique identifier, like a memory address)
+
+PEP 8 is the official guide for Python code. Helps with consistently.
+Variables is a snake_case conventions with an example of student_name.
+Constants is a SCREAMING_SNAKE_CASE conventions with an example of MAX_SIZE.
+Functins are also a snake_case conventions with an example of calculate_Average()
+Classes are PascalCase conventions with an example of StudentRecord.
+
+We follow PEP 8; readability, consistently, professionalism, & collaboration
+
+Good vs. Poor Style:
+
+1. ❌ POOR STYLE (works but hard to read)
+x = "Alice"
+n = 95
+a = 19
+t = x + " scored " + str(n)
+
+2. ✅ GOOD STYLE (PEP 8 compliant)
+student_name = "Alice"
+exam_score = 95
+student_age = 19
+result_message = student_name + " scored " + str(exam_score)
+
+3. ❌ POOR: camelCase (valid but not Pythonic)
+firstName = "Bob"
+lastName = "Smith"
+
+4. ✅ GOOD: snake_case (Pythonic)
+first_name = "Bob"
+last_name = "Smith"
+
+5. Constants should be UPPERCASE
+MAX_STUDENTS = 30
+DEFAULT_GRADE = "F"
+PI = 3.14159
+
+Values that are considered falsy is:
+[], 
+
+Values that are considered Truly is:
+
+Slicing:
+
+"Python"[0]
+Output - "P" since 0 in the brackets is the first letter
+
+text = "Python"
+print(text[-1])
+will print n due to the last letter being -1 when counting back.4
