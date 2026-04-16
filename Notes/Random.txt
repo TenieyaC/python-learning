@@ -54,4 +54,4 @@ Output - "P" since 0 in the brackets is the first letter
 
 text = "Python"
 print(text[-1])
-will print n due to the last letter being -1 when counting back.4
+will print n due to the last letter being -1 when counting back.
